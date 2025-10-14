@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="ru">
+<head><meta charset="utf-8"><title>Схема системы (SVG)</title></head>
+<body>
+  <!-- Простая SVG-блок-схема -->
+  <svg width="800" height="240" xmlns="http://www.w3.org/2000/svg">
+    <!-- фон -->
+    <rect width="100%" height="100%" fill="#f8f9fb"/>
+    <!-- Источники -->
+    <g>
+      <rect x="20" y="40" width="140" height="80" rx="8" fill="#e3f2fd" stroke="#90caf9"/>
+      <text x="90" y="65" font-family="sans-serif" font-size="12" text-anchor="middle" fill="#0d47a1">Источники данных</text>
+      <text x="90" y="88" font-family="sans-serif" font-size="11" text-anchor="middle" fill="#0d47a1">CSV / LMS / Журналы</text>
+    </g>
+
+    <!-- Стрелка к ETL -->
+    <line x1="160" y1="80" x2="260" y2="80" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <!-- ETL -->
+    <g>
+      <rect x="260" y="40" width="160" height="80" rx="8" fill="#fff3e0" stroke="#ffb74d"/>
+      <text x="340" y="70" font-family="sans-serif" font-size="13" text-anchor="middle" fill="#e65100">ETL</text>
+      <text x="340" y="92" font-family="sans-serif" font-size="11" text-anchor="middle" fill="#e65100">Очистка · Аггрегация</text>
+    </g>
+
+    <!-- Стрелка к Хранилищу -->
+    <line x1="420" y1="80" x2="520" y2="80" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <!-- Хранилище -->
+    <g>
+      <rect x="520" y="30" width="140" height="100" rx="8" fill="#e8f5e9" stroke="#81c784"/>
+      <text x="590" y="65" font-family="sans-serif" font-size="13" text-anchor="middle" fill="#2e7d32">Хранилище</text>
+      <text x="590" y="88" font-family="sans-serif" font-size="11" text-anchor="middle" fill="#2e7d32">SQLite / DB</text>
+    </g>
+
+    <!-- Стрелка вниз к Аналитике -->
+    <line x1="590" y1="130" x2="590" y2="170" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <!-- Аналитика -->
+    <g>
+      <rect x="440" y="170" width="220" height="50" rx="8" fill="#f3e5f5" stroke="#ce93d8"/>
+      <text x="550" y="200" font-family="sans-serif" font-size="12" text-anchor="middle" fill="#6a1b9a">Аналитика · Модели</text>
+    </g>
+
+    <!-- Стрелка влево к Дашборду -->
+    <line x1="440" y1="195" x2="320" y2="195" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+
+    <!-- Дашборд -->
+    <g>
+      <rect x="140" y="150" width="160" height="90" rx="8" fill="#fffde7" stroke="#fff176"/>
+      <text x="220" y="175" font-family="sans-serif" font-size="13" text-anchor="middle" fill="#f57f17">Дашборд</text>
+      <text x="220" y="195" font-family="sans-serif" font-size="11" text-anchor="middle" fill="#f57f17">Визуализация KPI</text>
+    </g>
+
+    <!-- Стрелка от ETL к Дашборду (обновления) -->
+    <line x1="340" y1="120" x2="220" y2="150" stroke="#666" stroke-dasharray="4 3" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+    <!-- Определение маркера стрелки -->
+    <defs>
+      <marker id="arrow" markerWidth="10" markerHeight="10" refX="10" refY="5" orient="auto" markerUnits="strokeWidth">
+        <path d="M0,0 L10,5 L0,10 z" fill="#333" />
+      </marker>
+    </defs>
+  </svg>
+</body>
+</html>
