@@ -4,6 +4,8 @@
 [Задание бот](https://github.com/codecrafters-io/build-your-own-x?tab=readme-ov-file#build-your-own-bot)
 [Ссылка на теорию задания Телеграмм пайтон бота](https://www.freecodecamp.org/news/how-to-create-a-telegram-bot-using-python/)
 
+[Документация в формате html]()
+
 ## Создание Telegram-бота на Python
 
 Ниже представлена: Последовательность действий по исследованию предметной области и созданию технологии. Для удобства в руководстве ниже использую слово этап вместп действия
