@@ -7,7 +7,6 @@
 * [Ссылка на теорию задания Телеграмм пайтон бота](https://www.freecodecamp.org/news/how-to-create-a-telegram-bot-using-python/)
 
 Дополнительно: 
-
 * [Документация в формате html](документация.html)
 
 -----
