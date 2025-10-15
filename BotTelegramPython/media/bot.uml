@@ -1,0 +1,22 @@
+@startuml
+participant User as "Пользователь"
+participant Bot as "Бот"
+participant TelegramAPI as "Telegram API"
+
+User->>Bot: sendMessage("/start")
+Bot->>TelegramAPI: sendMessage("Hello!")
+TelegramAPI->>Bot: receiveMessage
+Bot->>Bot: handleMessage("/start")
+Bot->>TelegramAPI: sendMessage("Welcome!")
+
+User->>Bot: sendMessage("Что твой гороскоп?")
+Bot->>TelegramAPI: sendMessage("Введите знак зодиака")
+TelegramAPI->>Bot: receiveMessage
+Bot->>Bot: handleMessage("знак зодиака")
+Bot->>TelegramAPI: sendMessage("Введите дату")
+TelegramAPI->>Bot: receiveMessage
+Bot->>Bot: handleMessage("дата")
+Bot->>TelegramAPI: getDailyHoroscope("знак зодиака", "дата")
+TelegramAPI->>Bot: sendHoroscope
+Bot->>TelegramAPI: sendMessage("Гороскоп на сегодня")
+@enduml
